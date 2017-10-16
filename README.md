@@ -1,5 +1,27 @@
 # Evnt
 
+-------------------------------------------------------------
+les dette(fra trym):
+
+if "ng generate component" or "ng serve" doesn't work try the 
+command "ng init" in the project folder. 
+
+
+You have to run "npm install" in project folder to get node_modules
+And "npm install --save bootstrap" to install bootstrap as a dev dependency
+
+
+If bootstrap still isn't working, make sure your styles-array in angular-cli.json has the bootstrap-line and looks like this: 
+
+"styles": [
+ "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+ "styles.css"
+]
+
+
+
+-------------------------------------------------------------
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.28.3.
 
 ## Development server
