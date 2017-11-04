@@ -1,0 +1,18 @@
+
+<div id="frontpageContainer" class="container">
+  <div class="row">
+    <div class="col-md-4 col-md-offset-4">
+      <input #eventPinInput type="number" id="eventpinInput" placeholder="Event Pin">
+      <button
+      class="btn"
+      id="joinBtn"
+      (click)="joinEvent(eventPinInput.value, ngWrong)"
+      >Join</button>
+
+      <div id="wrongPin" #ngWrong>
+        <p>Sorry! No pin matching {{ eventPin }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
