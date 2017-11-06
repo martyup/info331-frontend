@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-main-content',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainContentComponent implements OnInit {
 
-  constructor() { }
+results:string[];
 
-  ngOnInit() {
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    // Make the HTTP request:
+    this.http.get('localhost:3000/api/events/1000/images').subscribe(data => {
+      // Read the result field from the JSON response.
+      this.results = data['results'];
+      console.log(this.results);
+    });
   }
 
 }

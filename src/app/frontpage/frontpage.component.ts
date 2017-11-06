@@ -27,7 +27,7 @@ export class FrontpageComponent implements OnInit, OnDestroy {
   joinEvent(eventPin:number, wrongPin:HTMLDivElement){
     if(eventPin){
       this.eventPin = eventPin;
-      this.router.navigate(['/event', eventPin]);
+      this.router.navigate(['/api/events', eventPin]);
     }
     else {
       this.eventPin = eventPin;
