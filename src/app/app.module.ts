@@ -17,6 +17,7 @@ import { FrontpageComponent } from './frontpage/frontpage.component';
 import { ContactComponent } from './contact/contact.component';
 import { AboutComponent } from './about/about.component';
 import { UploadComponent } from './upload/upload.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes:Routes = [
   { path: '', component:FrontpageComponent },
@@ -28,7 +29,8 @@ const routes:Routes = [
   { path: 'contact', component:ContactComponent },
   //her også
   { path: 'api/upload/:eventPin', component:UploadComponent },
-  { path: 'upload', component:UploadComponent }
+  { path: 'upload', component:UploadComponent },
+  { path:'**', component:PageNotFoundComponent }
 ];
 
 @NgModule({
@@ -42,7 +44,8 @@ const routes:Routes = [
     FrontpageComponent,
     ContactComponent,
     AboutComponent,
-    UploadComponent
+    UploadComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

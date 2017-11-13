@@ -8,17 +8,24 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MainContentComponent implements OnInit {
 
-results:string[];
+  results: string[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     // Make the HTTP request:
-    this.http.get('/api/events/1000/images').subscribe(data => {
+    this.http.get('http://localhost:3000/api/events/1000/images').subscribe(data => {
       // Read the result field from the JSON response.
-      this.results = data['results'];
-      console.log(this.results);
+      this.results.push(data.toString());
+      //img src: ""
+    //   this.results = data['code'];
+      console.log("---- valueOf ----" + data.valueOf());
+      console.log("---- this.results ----" + this.results);
     });
+
+
+
+
   }
 
 }
