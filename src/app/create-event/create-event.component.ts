@@ -10,6 +10,13 @@ export class CreateEventComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
+
+
+    document.getElementById("bu").onclick = function() {
+      console.log("hey");
+    }
+
   }
 
 }
