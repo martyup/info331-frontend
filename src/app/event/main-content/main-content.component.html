@@ -6,12 +6,20 @@
 
       <div class="row text-center text-lg-left">
 
+        <div *ngFor="let img of results">
+          <div class="col-lg-3 col-md-4 col-xs-12">
+            <input type="checkbox" class="checkmark">
+            <a href="#" class="d-block mb-4 h-100">
+              <img src="{{ img }}" class="img-fluid img-thumbnail" />
+            </a>
+          </div>
+        </div>
+
         <div class="col-lg-3 col-md-4 col-xs-12">
           <input type="checkbox" class="checkmark">
-          <a href="#" class="d-block mb-4 h-100">
             <img class="img-fluid img-thumbnail" src="http://placehold.it/400x300" alt="">
-          </a>
         </div>
+
         <div class="col-lg-3 col-md-4 col-xs-12">
           <input type="checkbox" class="checkmark">
           <a href="#" class="d-block mb-4 h-100">
