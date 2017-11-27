@@ -1,3 +1,11 @@
+#bs-hamburger{
+  margin-top: 13px;
+}
+
+#bs-dropdown{
+  text-align: center;
+}
+
 .navbar-inverse{
   background-color:#1ea176;
   border:0;
