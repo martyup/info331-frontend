@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-event.component.css']
 })
 export class CreateEventComponent implements OnInit {
+// @Output() eName = new EventEmitter<string>();
+// @Output() startEndTime = new EventEmitter<{string, string}>();
 
+  eventName:string;
   optPwd:string;
   adminPwd:string;
   startDate:string;
@@ -36,6 +39,7 @@ export class CreateEventComponent implements OnInit {
 
   postEvent(eventName:string, email:string, optPwd:string, adminPwd:string, startDate:string, endDate:string, location:string, guests:string, desc:string){
 
+    this.eventName = eventName;
     this.optPwd = optPwd;
     this.adminPwd = adminPwd;
     this.startDate = startDate;
@@ -55,10 +59,12 @@ export class CreateEventComponent implements OnInit {
     }
 
     console.log(event);
+    // this.eName.emit(this.eventName);
+    // this.startEndTime.emit({startDate, endDate});
 
-    // this.http.post('http://localhost:3000/api/events', {event: event}).subscribe(res => {
-    //   console.log(res);
-    // });
+    this.http.post('http://localhost:3000/api/events', {event: event}).subscribe(res => {
+      console.log(res['eventCode']);
+    });
     this.router.navigate(['/eventCreated']);
   }
 
